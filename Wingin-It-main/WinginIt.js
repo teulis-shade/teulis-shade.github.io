@@ -109,12 +109,27 @@ var score = 0;
 //Movement Handling
 var rightPressed = false;
 var leftPressed = false;
+var mouseDown = false;
+var mouseXPos = 0;
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mousePosUpdate, false);
+document.addEventListener("mousedown", clickDown, false);
+document.addEventListener("mouseup", clickUp, false);
 
 //Objects
 var fallingObjects = [];
 var fallCounter = 0;
+
+function clickDown(e) {
+	mouseDown = true;
+}
+function clickUp(e) {
+	mouseDown = false;
+}
+function mousePosUpdate(e) {
+	mouseXPos = e.clientX;
+}
 
 //Character movement
 function keyDownHandler(e) {
@@ -241,13 +256,13 @@ function draw() {
       ctx.textAlign = "left";
 
       //More movement handling
-      if(rightPressed) {
+      if(rightPressed || (mouseDown && mouseXPos > buzz.x)) {
          buzz.x += 5 + speedVar;
          if (buzz.x + buzz.width > canvas.width){
              buzz.x = canvas.width - buzz.width;
          }
       }
-      else if(leftPressed) {
+      else if(leftPressed || (mouseDown && mouseXPos < buzz.x)) {
          buzz.x -= 5 + speedVar;
          if (buzz.x < 0){
              buzz.x = 0;
