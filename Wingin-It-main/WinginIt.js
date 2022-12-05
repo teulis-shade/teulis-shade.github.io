@@ -114,9 +114,9 @@ var mouseDown = false;
 var mouseXPos = 0;
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mousePosUpdate, false);
-document.addEventListener("mousedown", clickDown, false);
-document.addEventListener("mouseup", clickUp, false);
+document.addEventListener("pointermove", mousePosUpdate, false);
+document.addEventListener("pointerdown", clickDown, false);
+document.addEventListener("pointerup", clickUp, false);
 
 //Objects
 var fallingObjects = [];
