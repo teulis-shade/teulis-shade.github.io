@@ -7,6 +7,7 @@ canvas.height = window.innerHeight - 20;
 canvas.style.display = "block";
 var fillColor = "yellow";
 var finalColor = 0;
+console.log("version 1");
 
 //Sprites for the things, declare them here, then put them in the objects
 var buzzSprite = new Image(10, 10);
