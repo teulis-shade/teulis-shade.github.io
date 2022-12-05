@@ -258,12 +258,14 @@ function draw() {
       //More movement handling
       if(rightPressed || (mouseDown && mouseXPos > buzz.x)) {
          buzz.x += 5 + speedVar;
+	 console.log("right");
          if (buzz.x + buzz.width > canvas.width){
              buzz.x = canvas.width - buzz.width;
          }
       }
       else if(leftPressed || (mouseDown && mouseXPos < buzz.x)) {
          buzz.x -= 5 + speedVar;
+	 console.log("left");
          if (buzz.x < 0){
              buzz.x = 0;
          }
