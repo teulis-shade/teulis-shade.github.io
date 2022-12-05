@@ -128,7 +128,7 @@ function clickUp(e) {
 	mouseDown = false;
 }
 function mousePosUpdate(e) {
-	mouseXPos = e.clientX;
+	mouseXPos = e.touches[0].clientX;
 }
 
 //Character movement
