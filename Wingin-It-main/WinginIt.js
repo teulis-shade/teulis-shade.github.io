@@ -128,6 +128,8 @@ function clickUp(e) {
 	mouseDown = false;
 }
 function mousePosUpdate(e) {
+	console.log(e.clientX);
+	console.log(e.touches[0]);
 	mouseXPos = e.touches[0].clientX;
 }
 
