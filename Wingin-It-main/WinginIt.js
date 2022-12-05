@@ -117,6 +117,9 @@ document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("pointermove", mousePosUpdate, false);
 document.addEventListener("pointerdown", clickDown, false);
 document.addEventListener("pointerup", clickUp, false);
+document.addEventListener("pointercancel", function(e) +> {
+	console.log("Canceled");
+}, false);
 
 //Objects
 var fallingObjects = [];
