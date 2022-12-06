@@ -230,7 +230,7 @@ function draw() {
                      return ele !== element;
                  });
              } 
-             if (strikes == 3) {
+             if (strikes >= 3) {
                  gameOver = true;
              }
              //Collide with floor
@@ -242,7 +242,7 @@ function draw() {
                      strikes++;
                  }
              }
-             if (strikes == 3) {
+             if (strikes >= 3) {
                  gameOver = true;
              }
              });
