@@ -54,10 +54,11 @@ function addAll()
     games.push(new Game("corpsedrop.png", "Clone Launch", ""));
     games.push(new Game("elements.png", "The Elements", ""));
     games.push(new Game("currentcrisis.png", "Current Crisis", ""));
-    games.push(new Game("winginit.png", "Wingin' It", ""));
+    games.push(new Game("winginit.png", "Wingin' It", "https://teulis-shade.github.io/Wingin-It-main/"));
     games.push(new Game("sumosquared.png", "Sumo Squared", ""));
     games.push(new Game("coinhell.png", "Coin Hell", ""));
     games.push(new Game("extremophile.png", "Extremophile", "https://teulis.itch.io/extremophile"));
+    games.push(new Game("apartment.png", "Apartment Fire", "https://teulis-shade.github.io/apartment.html"))
 }
 
 window.onload = initialize();
