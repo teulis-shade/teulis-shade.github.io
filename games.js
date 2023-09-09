@@ -11,7 +11,7 @@ class Game {
         let imageView = document.createElement("img");
         imageView.addEventListener("error", function() { imageView.src = "images/noimage.png"; });
         imageView.src = "images/" + this.image;
-        imageView.style.width = "450px";
+        imageView.style.width = "350px";
         imageView.style.height = "225px";
         imageView.innerHTML = "There should be an image here";
         node.appendChild(imageView);
@@ -59,6 +59,7 @@ function addAll()
     games.push(new Game("coinhell.png", "Coin Hell", ""));
     games.push(new Game("extremophile.png", "Extremophile", "https://teulis.itch.io/extremophile"));
     games.push(new Game("apartment.png", "Apartment Fire", "https://teulis-shade.github.io/apartment.html"))
+    games.push(new Game("connect43D.png", "Connect 4 3D", "Connect 4 3D.zip"))
 }
 
 window.onload = initialize();
