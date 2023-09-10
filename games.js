@@ -60,6 +60,7 @@ function addAll()
     games.push(new Game("extremophile.png", "Extremophile", "https://teulis.itch.io/extremophile"));
     games.push(new Game("apartment.png", "Apartment Fire", "https://teulis-shade.github.io/apartment.html"))
     games.push(new Game("connect43D.png", "Connect 4 3D", "Games/Connect 4 3D.zip"))
+    games.push(new Game("404.png", "404 Error Page", "nothing.html"));
 }
 
 window.onload = initialize();
