@@ -1,5 +1,6 @@
 body {
-    background-color: darkgray;
+    background-color: rgb(48, 48, 48);
+    color: white
 }
 
 .page-content {
@@ -34,7 +35,8 @@ a {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #444444;
+    color: white;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -52,15 +54,9 @@ a {
     font-size: 30px;
   }
   
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #990000;
-    color: white;
-  }
-  
   /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
+  .sidebar a:hover {
+    background-color: #777777;
     color: white;
   }
 
@@ -70,4 +66,14 @@ a {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
   }

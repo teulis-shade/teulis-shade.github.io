@@ -53,7 +53,7 @@ function addAll()
     games.push(new Game("slider.png", "Slider", "https://store.steampowered.com/app/1916890/Slider/"));
     games.push(new Game("corpsedrop.png", "Clone Launch", "Games/Clone Launch.zip"));
     games.push(new Game("elements.png", "The Elements", "Games/The Elements.zip"));
-    games.push(new Game("currentcrisis.png", "Current Crisis (Not Currently Available)", ""));
+    //games.push(new Game("currentcrisis.png", "Current Crisis (Not Currently Available)", ""));
     games.push(new Game("winginit.png", "Wingin' It", "https://teulis-shade.github.io/Wingin-It-main/"));
     games.push(new Game("sumosquared.png", "Sumo Squared", "Games/Sumo Squared.zip"));
     games.push(new Game("coinhell.png", "Coin Hell", "Games/Coin Hell.zip"));
