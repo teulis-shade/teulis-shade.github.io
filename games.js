@@ -61,7 +61,7 @@ function addAll()
     games.push(new Game("apartment.png", "Apartment Fire", "https://teulis-shade.github.io/apartment.html"))
     games.push(new Game("connect43D.png", "Connect 4 3D", "Games/Connect 4 3D.zip"))
     games.push(new Game("404.png", "404 Error Page", "nothing.html"));
-    games.push(new Game("throughEyes.png", "Through Other Eyes", "https://teulis-shade.github.io/otherEyes.html"));
+    games.push(new Game("throughEyes.png", "Through Other Eyes", "otherEyes.html"));
 }
 
 window.onload = initialize();
