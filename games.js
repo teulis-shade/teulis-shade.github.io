@@ -62,6 +62,7 @@ function addAll()
     games.push(new Game("connect43D.png", "Connect 4 3D", "Games/Connect 4 3D.zip"))
     games.push(new Game("404.png", "404 Error Page", "nothing.html"));
     games.push(new Game("throughEyes.png", "Through Other Eyes", "otherEyes.html"));
+    games.push(new Game("libraryOfTragedy", "A Library of Tragedy", "libraryOfTragedy.html"));
 }
 
 window.onload = initialize();
