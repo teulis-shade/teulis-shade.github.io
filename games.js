@@ -63,6 +63,7 @@ function addAll()
     games.push(new Game("404.png", "404 Error Page", "nothing.html"));
     games.push(new Game("throughEyes.png", "Through Other Eyes", "otherEyes.html"));
     games.push(new Game("libraryOfTragedy", "A Library of Tragedy", "libraryOfTragedy.html"));
+    games.push(new Game("wizard.png", "The Wizard's Fall", "https://teulis-shade.github.io/The Wizard's Fall.html"));
 }
 
 window.onload = initialize();
