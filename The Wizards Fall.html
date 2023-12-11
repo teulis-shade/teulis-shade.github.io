@@ -53,7 +53,7 @@ Now that you&#39;re past the hard part in the spell, [[You think back to your ch
 
 [[Begin The Spell-&gt;First Spell]]
 
-(if: $timesRun is not 0)[You&#39;ve had enough reminiscing, [[Skip the Ritual-&gt;The Assassin Appears]]]]</tw-passagedata><tw-passagedata pid="4" name="Skip QTE" tags="" position="625,175" size="100,100">(if: $skipQTE)[(link: &quot;Turn On&quot;)[(set: $skipQTE to false)(replace: ?skipQTE)[(display: &quot;Skip QTE&quot;)]]](else:)[(link: &quot;Turn Off&quot;)[(set: $skipQTE to true)(replace: ?skipQTE)[(display: &quot;Skip QTE&quot;)]]]</tw-passagedata><tw-passagedata pid="5" name="Remembering Childhood" tags="" position="875,400" size="100,100">Your first memory was of your mentor. He was a traveling wizard that had shown up in town when the trees started dropping their leaves. He had offered to cast some magic to help the village in exhange for a child to teach magic to. You were exchanged, at the age of 7, to go learn magic from him.
+(if: $timesRun is not 0)[You&#39;ve had enough reminiscing, [[Skip the Ritual-&gt;The Assassin Appears]]](else-if:$skipBeg)[You&#39;ve had enough reminiscing, [[Skip the Ritual-&gt;The Assassin Appears]]]]</tw-passagedata><tw-passagedata pid="4" name="Skip QTE" tags="" position="625,175" size="100,100">(if: $skipQTE)[(link: &quot;Turn On&quot;)[(set: $skipQTE to false)(replace: ?skipQTE)[(display: &quot;Skip QTE&quot;)]]](else:)[(link: &quot;Turn Off&quot;)[(set: $skipQTE to true)(replace: ?skipQTE)[(display: &quot;Skip QTE&quot;)]]]</tw-passagedata><tw-passagedata pid="5" name="Remembering Childhood" tags="" position="875,400" size="100,100">Your first memory was of your mentor. He was a traveling wizard that had shown up in town when the trees started dropping their leaves. He had offered to cast some magic to help the village in exhange for a child to teach magic to. You were exchanged, at the age of 7, to go learn magic from him.
 
 You still visited home, but in your heart, [[he was your family-&gt;Traveling with the Wizard]]</tw-passagedata><tw-passagedata pid="6" name="Before Childhood" tags="" position="750,425" size="100,100">The monotony of your chanting lulls you into a dreamlike trance. The spell circle reminds you of simpler times, of your first time learning magic.
 
@@ -116,7 +116,7 @@ You are consumed.
 
 But you still have a deal to complete, and as such, he will not let you die.
 
-And so, [[you return to the beginning-&gt;Title]]</tw-passagedata><tw-passagedata pid="18" name="Starter" tags="" position="500,300" size="100,100">(set: $timesRun to 0)
+And so, [[you return to the beginning-&gt;Title]]</tw-passagedata><tw-passagedata pid="18" name="Starter" tags="" position="500,300" size="100,100">(set: $timesRun to 0, $skipBeg to false)
 &lt;script&gt;
 let name = &quot;timesRun=&quot;;
 let decodedCookie = decodeURIComponent(document.cookie);
@@ -208,7 +208,7 @@ Just then, you heard a raspy voice come from the Githyanki&#39;s mouth.
 
 [[&quot;Where&#39;s the rest?&quot;-&gt;Talking to Ashina]]
 
-&lt;script&gt;document.cookie = &quot;timesRun=&quot; + harlowe.State.variables.timesRun&lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="The Earthquakes" tags="" position="3150,300" size="100,100">(if: $skipQTE)[(go-to:&quot;Skipped Earthquakes&quot;)]
+&lt;script&gt;document.cookie = &quot;timesRun=&quot; + harlowe.State.variables.timesRun&lt;/script&gt;(set: $skipBeg to true)</tw-passagedata><tw-passagedata pid="33" name="The Earthquakes" tags="" position="3150,300" size="100,100">(if: $skipQTE)[(go-to:&quot;Skipped Earthquakes&quot;)]
 You snap out of your reverie as the earth shakes. A small crack appears in the center of the ritual circle. The Leviathan didn&#39;t mention this. Perhaps it is a side effect of too much divine power entering the world at once. It&#39;s too late to think about the why, the ritual is too important to fail now. 
 
 (link: &quot;Your Final Hurdle begins&quot;)[
@@ -251,7 +251,7 @@ But it wasn&#39;t here for you, it was here for your bargaining chip, [[And it w
 &lt;script&gt;document.cookie = &quot;timesRun=&quot; + harlowe.State.variables.timesRun&lt;/script&gt;</tw-passagedata><tw-passagedata pid="41" name="Begin casting" tags="" position="4400,300" size="100,100">(if:$skipQTE)[(go-to:&quot;Paries Paraietes&quot;]
 
 As you begin casting a spell, you see the cold glint of a dagger flying towards your throat. Before you can even think, you have to make a snap decision.
-(set: $stopped to false, $time to 100)(live: .01s)[(if: not $stopped)[(print: &#39;&lt;meter value=&quot;&#39; + (text: $time) + &#39;&quot; min=&quot;0&quot; max=&quot;100&quot; optimum=&quot;100&quot; high=&quot;50&quot; low=&quot;20&quot;&gt;&lt;/meter&gt;&#39;)]](live: .01s)[(set: $time to it -2.5) (if: $time &lt;= 0)[(goto: &quot;Failure3&quot;)] (if: $stopped)[(stop:)]]
+(set: $stopped to false, $time to 100)(live: .01s)[(if: not $stopped)[(print: &#39;&lt;meter value=&quot;&#39; + (text: $time) + &#39;&quot; min=&quot;0&quot; max=&quot;100&quot; optimum=&quot;100&quot; high=&quot;50&quot; low=&quot;20&quot;&gt;&lt;/meter&gt;&#39;)]](live: .01s)[(set: $time to it -2) (if: $time &lt;= 0)[(goto: &quot;Paries Parietes&quot;)] (if: $stopped)[(stop:)]]
 
 &lt;em&gt;(link:&quot;Fax&quot;)[(go-to:&quot;Fax&quot;)]&lt;/em&gt;
 &lt;em&gt;(link:&quot;Paries Parietes&quot;)[(go-to:&quot;Paries Parietes&quot;)]&lt;/em&gt;
@@ -300,7 +300,7 @@ You have a few seconds to realize that perhaps you should&#39;ve researched maki
 But he still has a use for you, and your contract is not complete, so you are sucked back to [[the beginning of the ritual-&gt;Title]] </tw-passagedata><tw-passagedata pid="48" name="Begin casting slowed" tags="" position="4475,550" size="100,100">(if:$skipQTE)[(go-to:&quot;Fax&quot;)]
 
 As you begin casting a spell, you feel her eyes snap back to you, likely attempting to tell whether or not the spell is for the ritual or intended for her. She determines, correctly, from the look in your eyes that it is meant for her, and within a blink of an eye, a cold silver glint is headed straight for your head.
-(set: $stopped to false, $time to 100)(live: .01s)[(if: not $stopped)[(print: &#39;&lt;meter value=&quot;&#39; + (text: $time) + &#39;&quot; min=&quot;0&quot; max=&quot;100&quot; optimum=&quot;100&quot; high=&quot;50&quot; low=&quot;20&quot;&gt;&lt;/meter&gt;&#39;)]](live: .01s)[(set: $time to it -1.5) (if: $time &lt;= 0)[(goto: &quot;Failure3&quot;)] (if: $stopped)[(stop:)]]
+(set: $stopped to false, $time to 100)(live: .01s)[(if: not $stopped)[(print: &#39;&lt;meter value=&quot;&#39; + (text: $time) + &#39;&quot; min=&quot;0&quot; max=&quot;100&quot; optimum=&quot;100&quot; high=&quot;50&quot; low=&quot;20&quot;&gt;&lt;/meter&gt;&#39;)]](live: .01s)[(set: $time to it -1.25) (if: $time &lt;= 0)[(goto: &quot;Paries Parietes&quot;)] (if: $stopped)[(stop:)]]
 
 &lt;em&gt;(link:&quot;Fax&quot;)[(go-to:&quot;Fax&quot;)]&lt;/em&gt;
 &lt;em&gt;(link:&quot;Paries Parietes&quot;)[(go-to:&quot;Paries Parietes&quot;)]&lt;/em&gt;
