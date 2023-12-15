@@ -49,6 +49,7 @@ Now that you&#39;re past the hard part in the spell, [[You think back to your ch
 (live:.1s)[(if: not $stopped)[(link:&quot;Keep chanting, hoping you&#39;ll remember&quot;)[(go-to:&quot;Failure&quot;)]](else:)[(stop:)]]
 (live:.1s)[(if: not $stopped)[(link:&quot;Try and Remember&quot;)[(go-to:&quot;Failure&quot;)]](else:)[(stop:)]]]]</tw-passagedata><tw-passagedata pid="2" name="Failure" tags="" position="875,175" size="100,100">The spell backfires, and you are blasted off your feet. You were too hasty, but you will be prepared when you [[try again-&gt;First Spell]]
 </tw-passagedata><tw-passagedata pid="3" name="Title" tags="" position="625,300" size="100,100">(align:&quot;=&gt;&lt;=&quot;)[&lt;h1&gt;The Wizard&#39;s Fall&lt;/h1&gt;(set:$leviathanEarly to false, $spearDespair to false, $bookDespair to false, $kingIgnored to false)
+&lt;h3&gt;By: Tristan Ziegler&lt;/h3&gt;
 (if: $skipQTE is 0)[(set: $skipQTE to false)]Quick Time Events: |skipQTE&gt;[(display: &quot;Skip QTE&quot;)]&lt;script&gt;document.cookie = &quot;timesRun=&quot; + harlowe.State.variables.timesRun&lt;/script&gt;
 
 [[Begin The Spell-&gt;First Spell]]
